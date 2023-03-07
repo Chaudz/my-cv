@@ -9,10 +9,10 @@ var profile = new Schema({
   name: {
     type: String,
   },
-  Job: {
+  job: {
     type: String,
   },
-  adress: {
+  address: {
     type: String,
   },
   web: {
