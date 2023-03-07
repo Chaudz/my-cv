@@ -29,7 +29,7 @@ html {
 body {
   height: 100%;
   font-family: "Quicksand", sans-serif;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgb(6, 5, 5);
   box-sizing: border-box;
   font-size: 14px;
   overflow: hidden;
@@ -296,11 +296,43 @@ Page Styles
   overflow-y: auto;
   margin-left: 10px;
   background: #fff;
-  border-left: 1px solid rgba(221, 221, 221, 0.38);
+}
+.logo a{
+  box-shadow: 1px 2px 11px 2px #d6c9c9;
+}
+.logo .btn-change{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  height: 20px;
+  width: 40px;
+  border-radius: 10px;
+  background-color: #000;
+  box-shadow: -3px 1px 20px 0px #6e6262;
+  cursor: pointer;
+}
+.btn-change .btn-changecolor{
+  position: absolute;
+  height: 100%;
+  width: 20px;
+  background-color: #fff;
+}
+.btn-change .left{
+  left: 0;
+  border-radius: 10px;
+  border-radius: 10px;
+  transition: 2s ease-in-out;
+}
+.btn-change .right{
+  display: none;
+  right: 0;
+  border-radius: 10px;
+  border-radius: 10px;
+  transition: 2s ease-in-out;
 }
 .logo {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .logo a {
@@ -323,30 +355,36 @@ Page Styles
   justify-content: flex-end;
   margin: 50px 0px;
 }
+/* .nav ul li:nth-child(1) a{
+  color: #0b0909;
+} */
 
 .nav ul li,
 .nav ul li a {
   display: flex;
   justify-content: flex-end;
+  
 }
+/* .nav ul li a:nth-child(1){
+ color: #ff8f00
+} */
 
 .nav ul li a {
   padding: 8px 0px;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.4);
   letter-spacing: 1px;
   font-weight: 500;
   position: relative;
 }
 
-.nav ul li a:hover {
+/* .nav ul li a:hover {
   color: #000;
-}
+} */
 .nav ul li a:after {
   content: "";
   width: 0;
   height: 1px;
-  background: #000;
+  background: #b63737;
   position: absolute;
   bottom: 5px;
   left: 0;
@@ -373,7 +411,6 @@ Page Styles
 }
 
 .left-footer {
-  color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -413,7 +450,6 @@ Page Styles
 }
 
 .social-icons ul li a:hover {
-  color: #000;
   transform: scale(1.2) translateY(-5px);
 }
 .user-profile {
@@ -423,7 +459,6 @@ Page Styles
 .sm-text {
   letter-spacing: 2.1px;
   font-weight: normal;
-  color: #222222;
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -433,7 +468,6 @@ Page Styles
   font-size: 40px;
   text-transform: uppercase;
   margin: 15px 0px;
-  color: #222222;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
 }
@@ -444,16 +478,21 @@ Page Styles
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   margin-bottom: 20px;
-  color: #222222;
 }
 
 .text {
   font-size: 15px;
 }
-
+.pr-list ul li:nth-child(1) img{
+  height: 15px; 
+  width: 15px;
+}
 .pr-list {
   margin: 30px 0px;
 }
+/* .user-img img{
+  border-radius: 50%;
+} */
 
 .pr-list ul li {
   margin-bottom: 8px;
@@ -481,7 +520,6 @@ Page Styles
 }
 
 .social-icons-head ul li a:hover {
-  color: #000;
   transform: scale(1.2) translateY(-5px);
 }
 .sec-title {
@@ -494,7 +532,6 @@ Page Styles
   text-transform: uppercase;
   letter-spacing: 5px;
   line-height: 1.8;
-  color: #000;
 }
 
 .pg-sub-title {
@@ -502,7 +539,84 @@ Page Styles
   display: block;
   font-size: 10px;
   text-transform: uppercase;
-  color: #999999;
   font-weight: 500;
   letter-spacing: 5px;
+}
+.title-list{
+  font-size: 30px;
+  font-weight: 600;
+}
+.education >li span{
+  font-weight: 600;
+  /* color:  #189958; */
+}
+.education li img{
+  height: 15px;
+  width: 15px;
+}
+.skill .one-skill{
+  display: flex;
+  align-items: center;
+}
+.skill  .full-percent{
+  position: relative;
+  height: 3px;
+  width: 200px;
+  background-color: #ff8f00;
+}
+.full-crossbar span{
+  position: absolute;
+  z-index: 100;
+  height: 100%;
+  background-color: #61ff01;
+}
+.one-skill .full-percent span{
+  width: 140px;
+}
+.one-skill .full-percent span{
+  width: 140px;
+}
+.two-skill .full-percent span{
+  width: 180px;
+}
+.three-skill .full-percent span{
+  width: 160px;
+}
+.experience > li  span{
+  font-weight: 600;
+  margin-right: 2px;
+}
+.user-img img{
+  box-shadow: 0 0px 16px 1px #57d70096;
+}
+.my-resume{
+  border-radius: 20px;
+  box-shadow: 1px 2px 20px 4px #878383;
+}
+.skill{
+  display: none;
+}
+.education{
+  display: none;
+}
+.experience{
+  display: none;
+}
+/* $xs: 0px;
+$sm: 600px;
+$md: 900px;
+$lg: 1200px;
+$xl: 1536px; */
+@media screen and (max-width: 1200px) {
+        .content-center{
+          display: flex;
+          flex-flow:column
+        }
+        .user-img {
+          max-width: 80%;          
+        }
+        .user-profile{
+          margin-top:20px;
+          padding: 0;
+        }
 }

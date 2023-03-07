@@ -2,11 +2,15 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn2.iconfinder.com/data/icons/badge-set-2/100/User_Profile-512.png"
+    />
     <link
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <div class="wraper">
@@ -14,41 +18,49 @@
         <!-- Table left -->
         <div class="left-content p-30">
           <div class="logo">
-            <a href="index.html">
+            <div class="btn-change">
+              <div class="btn-changecolor left"></div>
+              <div class="btn-changecolor right"></div>
+            </div>
+            <a href="#" class="my-resume">
               <span>My</span>
               <span>Resume</span>
             </a>
           </div>
           <div class="nav">
             <ul>
-              <li><a href="#Home">Home</a></li>
-              <li><a href="#About">About</a></li>
-              <li><a href="">Work Profile</a></li>
-              <li><a href="">Portfolio</a></li>
-              <li><a href="">Education</a></li>
-              <li><a href="">Contact</a></li>
+              <li class="page-home"><a href="#" class="nav-home">Home</a></li>
+              <li class="page-education">
+                <a href="#" class="nav-education">Education</a>
+              </li>
+              <li class="page-skill">
+                <a href="#" class="nav-skill">Skills</a>
+              </li>
+              <li class="page-experience">
+                <a href="#" class="nav-experience">Experience</a>
+              </li>
             </ul>
           </div>
           <div class="left-footer">
             <div class="social-icons">
               <ul>
                 <li>
-                  <a href=""
+                  <a href="#"
                     ><i class="fa fa-linkedin-square" aria-hidden="true"></i
                   ></a>
                 </li>
                 <li>
-                  <a href=""
+                  <a href="#"
                     ><i class="fa fa-facebook" aria-hidden="true"></i
                   ></a>
                 </li>
                 <li>
-                  <a href=""
+                  <a href="#"
                     ><i class="fa fa-twitter" aria-hidden="true"></i
                   ></a>
                 </li>
                 <li>
-                  <a href=""
+                  <a href="#"
                     ><i class="fa fa-instagram" aria-hidden="true"></i
                   ></a>
                 </li>
@@ -56,13 +68,9 @@
             </div>
             <div class="foot-contact">
               <ul>
-                <li>xxxxxxxxxxx@gmail.com</li>
-                <li>+91 90000XXXXX / 90XXXXXXXX</li>
+                <li><%= profile.email %></li>
+                <li>+84 <%= profile.phone %></li>
               </ul>
-            </div>
-
-            <div class="copy-rights">
-              Copyright &copy;2019 All rights reserved
             </div>
           </div>
         </div>
@@ -71,20 +79,17 @@
         <div class="main-content">
           <div class="section1 p-30" id="Home">
             <div class="sec-title">
-              <div class="pg-sub-title">Home</div>
               <div class="pg-title">My Profile</div>
             </div>
-            <div class="d-flex-align-center">
+            <div class="d-flex content-center">
               <div class="user-img flex-1">
-                <img
-                  src="https://colorlib.com/preview/theme/meetme/img/personal.jpg"
-                />
+                <img alt="Avatar" src="<%= profile.image %>" />
               </div>
               <div class="user-profile flex-1">
                 <div class="pro-details">
                   <div class="sm-text">HELLO EVERYBODY, I AM</div>
-                  <div class="name">Pavan Ramshetty</div>
-                  <div class="role">UI Developer</div>
+                  <div class="name"><%= profile.name %></div>
+                  <div class="role"><%= profile.job %></div>
                 </div>
                 <div class="text">
                   You will begin to realise why this exercise is called the
@@ -92,44 +97,96 @@
                   some different futures)
                 </div>
                 <div class="pr-list">
-                  <ul>
+                  <ul class="home">
                     <li>
-                      <i class="fa fa-calendar" aria-hidden="true"></i> 14th
-                      May, 1992
+                      <i class="fa fa-globe" aria-hidden="true"></i>
+                      <%= profile.web %>
                     </li>
                     <li>
-                      <i class="fa fa-phone" aria-hidden="true"></i> 90000XXXXX
-                      / 90XXXXXXXX
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                      <%= profile.phone %>
                     </li>
                     <li>
                       <i class="fa fa-envelope" aria-hidden="true"></i>
-                      xxxxxxxxxxxxxx@gmail.com
+                      <%= profile.email %>
                     </li>
                     <li>
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
-                      Hyderabad, Telangana
+                      <%= profile.address %>
+                    </li>
+                  </ul>
+                  <ul class="education">
+                    <li class="title-list">EDUCATION</li>
+                    <li>
+                      <i class="fa fa-university" aria-hidden="true"></i>
+                      <%= education.school %>
+                    </li>
+                    <li><span>Start time:</span> <%= education.startdate %></li>
+                    <li><span>End time:</span> <%= education.enddate %></li>
+                    <li><span>Level:</span> <%= education.description %></li>
+                  </ul>
+                  <ul class="skill">
+                    <li class="title-list">SKILL</li>
+                    <div class="wrapper-skill">
+                      <li>
+                        <%= skills[0].nameSkill %> <%= skills[0].percentSkill %>
+                      </li>
+                      <div class="one-skill">
+                        <li class="full-crossbar full-percent">
+                          <span></span>
+                        </li>
+                      </div>
+                    </div>
+                    <div class="wrapper-skill">
+                      <li>
+                        <%= skills[1].nameSkill %> <%= skills[1].percentSkill %>
+                      </li>
+                      <div class="two-skill">
+                        <li class="full-crossbar full-percent">
+                          <span></span>
+                        </li>
+                      </div>
+                    </div>
+                    <div class="wrapper-skill">
+                      <li>
+                        <%= skills[2].nameSkill %> <%= skills[2].percentSkill %>
+                      </li>
+                      <div class="three-skill">
+                        <li class="full-crossbar full-percent">
+                          <span></span>
+                        </li>
+                      </div>
+                    </div>
+                  </ul>
+                  <ul class="experience">
+                    <li class="title-list">EXPERIENCE</li>
+                    <li><span>Start time:</span><%= experience.startdate %></li>
+                    <li><span>End time:</span><%= experience.enddate %></li>
+                    <li><span>Company:</span> <%= experience.company %></li>
+                    <li>
+                      <span>Experienced:</span> <%= experience.description %>
                     </li>
                   </ul>
                 </div>
                 <div class="social-icons-head">
                   <ul>
                     <li>
-                      <a href=""
+                      <a href="#"
                         ><i class="fa fa-linkedin-square" aria-hidden="true"></i
                       ></a>
                     </li>
                     <li>
-                      <a href=""
+                      <a href="#"
                         ><i class="fa fa-facebook" aria-hidden="true"></i
                       ></a>
                     </li>
                     <li>
-                      <a href=""
+                      <a href="#"
                         ><i class="fa fa-twitter" aria-hidden="true"></i
                       ></a>
                     </li>
                     <li>
-                      <a href=""
+                      <a href="#"
                         ><i class="fa fa-instagram" aria-hidden="true"></i
                       ></a>
                     </li>
@@ -141,5 +198,6 @@
         </div>
       </div>
     </div>
+    <script src="./javascripts/index.js"></script>
   </body>
 </html>
