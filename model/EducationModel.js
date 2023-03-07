@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-var education = new Schema({
+var educationSchema = new Schema({
   startdate: {
     type: Date,
   },
@@ -17,5 +17,5 @@ var education = new Schema({
   },
 });
 
-var EducationModel = mongoose.model("education", education);
+var EducationModel = mongoose.model("educations", educationSchema);
 module.exports = EducationModel;

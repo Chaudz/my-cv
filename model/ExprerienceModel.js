@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-var exprerience = new Schema({
+var experience = new Schema({
   startdate: {
     type: Date,
   },
@@ -17,5 +17,5 @@ var exprerience = new Schema({
   },
 });
 
-var ExprerienceModel = mongoose.model("exprerience", exprerience);
-module.exports = ExprerienceModel;
+var ExperienceModel = mongoose.model("experience", experience);
+module.exports = ExperienceModel;
