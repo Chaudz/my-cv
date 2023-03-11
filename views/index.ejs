@@ -115,58 +115,8 @@
                       <%= profile.address %>
                     </li>
                   </ul>
-                  <ul class="education">
-                    <li class="title-list">EDUCATION</li>
-                    <li>
-                      <i class="fa fa-university" aria-hidden="true"></i>
-                      <%= education.school %>
-                    </li>
-                    <li><span>Start time:</span> <%= education.startdate %></li>
-                    <li><span>End time:</span> <%= education.enddate %></li>
-                    <li><span>Level:</span> <%= education.description %></li>
-                  </ul>
-                  <ul class="skill">
-                    <li class="title-list">SKILL</li>
-                    <div class="wrapper-skill">
-                      <li>
-                        <%= skills[0].nameSkill %> <%= skills[0].percentSkill %>
-                      </li>
-                      <div class="one-skill">
-                        <li class="full-crossbar full-percent">
-                          <span></span>
-                        </li>
-                      </div>
-                    </div>
-                    <div class="wrapper-skill">
-                      <li>
-                        <%= skills[1].nameSkill %> <%= skills[1].percentSkill %>
-                      </li>
-                      <div class="two-skill">
-                        <li class="full-crossbar full-percent">
-                          <span></span>
-                        </li>
-                      </div>
-                    </div>
-                    <div class="wrapper-skill">
-                      <li>
-                        <%= skills[2].nameSkill %> <%= skills[2].percentSkill %>
-                      </li>
-                      <div class="three-skill">
-                        <li class="full-crossbar full-percent">
-                          <span></span>
-                        </li>
-                      </div>
-                    </div>
-                  </ul>
-                  <ul class="experience">
-                    <li class="title-list">EXPERIENCE</li>
-                    <li><span>Start time:</span><%= experience.startdate %></li>
-                    <li><span>End time:</span><%= experience.enddate %></li>
-                    <li><span>Company:</span> <%= experience.company %></li>
-                    <li>
-                      <span>Experienced:</span> <%= experience.description %>
-                    </li>
-                  </ul>
+                  <%- include('education'); -%> <%- include('skill'); -%> <%-
+                  include('experience'); -%>
                 </div>
                 <div class="social-icons-head">
                   <ul>
